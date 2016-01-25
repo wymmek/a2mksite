@@ -47,11 +47,11 @@ This script creates several files owned by root; so, sudo is necessary.
 
 By default, these are the directories and files created. This is how I like my web server set up. You may prefer a different structure. The structure can be customized by opening the script and changing the configuration variables near the top of the script.
 
-    /var/www/sites/example.com/
-    /var/www/sites/example.com/public/
-    /var/www/sites/example.com/log/
-    /var/www/sites/example.com/log/access.log
-    /var/www/sites/example.com/log/error.log
+    /var/www/html/sites/example.com/
+    /var/www/html/sites/example.com/public/
+    /var/www/html/sites/example.com/log/
+    /var/www/html/sites/example.com/log/access.log
+    /var/www/html/sites/example.com/log/error.log
 
     /etc/apache2/sites-available/example.com
     /etc/apache2/sites-enabled/example.com
