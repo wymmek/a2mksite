@@ -33,7 +33,7 @@ APACHE_CONF="$APACHE_CONF_DIR/$DOMAIN.conf"
 LOGROTATE_CONF="$LOGROTATE_SITES_DIR/$DOMAIN.conf"
 
 # This is where the site itself will be created
-SITES_DIR="/var/www/sites"
+SITES_DIR="/var/www/html/sites"
 SITE_DIR="$SITES_DIR/$DOMAIN"
 PUBLIC_DIR="$SITE_DIR/public"
 LOG_DIR="$SITE_DIR/log"
