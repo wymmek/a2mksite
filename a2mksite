@@ -110,7 +110,7 @@ function mk_logrotate_conf {
 }
 
 function randpw {
-  echo < /dev/urandom tr -dc _A-Z-a-z-0-9 | head -c12
+  < /dev/urandom tr -dc _A-Z-a-z-0-9 | head -c12
 }
 
 # Determine template directories ========================
@@ -238,11 +238,12 @@ fi
 
 # FTP User ===================================
 echo "Creating FTP User"
-FTP_USER="$DOMAIN_User1"
-FTP_PASS=randpw
-ftpasswd --$FTP_PASS --name $FTP_USER --uid 33 --gid 33 --file /etc/proftpd/ftpd.passwd --home $SITE_DIR --shell /bin/false
+FTP_USER=$DOMAIN"_User1"
+FTP_PASS=$(randpw)
+echo $FTP_PASS | ftpasswd --passwd --stdin --name $FTP_USER --uid 33 --gid 33 --file /etc/proftpd/ftpd.passwd --home $SITE_DIR --shell /bin/false > /dev/null
 echo "User: $FTP_USER"
 echo "Pass: $FTP_PASS"
+echo "done!"
 
 # FINISH UP ==================================
 echo "Enabling Site..."
